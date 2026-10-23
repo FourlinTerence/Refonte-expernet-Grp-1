@@ -174,4 +174,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ========================================================================
+     4. GESTION DU FORMULAIRE D'INSCRIPTION (inscription.html)
+     ======================================================================== */
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Empêche le rechargement par défaut
+
+      const password = document.getElementById('regPassword')?.value;
+      const confirmPassword = document.getElementById('regPasswordConfirm')?.value;
+      const cguChecked = document.getElementById('regCgu')?.checked;
+      const prenom = document.getElementById('regPrenom')?.value || 'Candidat';
+
+      // Vérification de la correspondance des mots de passe
+      if (password && confirmPassword && password !== confirmPassword) {
+        alert('Les deux mots de passe ne correspondent pas.');
+        return;
+      }
+
+      // Vérification des conditions générales
+      if (!cguChecked) {
+        alert('Veuillez accepter la politique de confidentialité pour continuer.');
+        return;
+      }
+
+      // Message de confirmation et redirection vers la connexion
+      alert(`Félicitations ${prenom} ! Votre compte a été créé avec succès.\nVous allez être redirigé vers la page de connexion.`);
+      window.location.href = 'connexion.html';
+    });
+  }
+
 });
