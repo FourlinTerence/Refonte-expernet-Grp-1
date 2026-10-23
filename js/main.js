@@ -154,4 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ========================================================================
+     3. GESTION DU FORMULAIRE DE CONNEXION (connexion.html)
+     ======================================================================== */
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Empêche le rechargement standard de la page
+
+      // Récupération du rôle sélectionné (étudiant ou formateur)
+      const roleSelected = document.querySelector('input[name="userRole"]:checked')?.value;
+
+      // Redirection automatique vers le tableau de bord approprié
+      if (roleSelected === 'formateur') {
+        window.location.href = 'dashboard-formateur.html';
+      } else {
+        window.location.href = 'dashboard-etudiant.html';
+      }
+    });
+  }
+
 });
