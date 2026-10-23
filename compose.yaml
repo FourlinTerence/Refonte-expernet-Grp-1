@@ -1,0 +1,70 @@
+services:
+  # Service Web : héberge l'application front-end avec Bootstrap 5.3.3 via Nginx
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: expernet-web
+    restart: unless-stopped
+    ports:
+      - "80:80"       # Accès direct : http://localhost
+      - "8080:80"   # Accès alternatif si le port 80 est utilisé : http://localhost:8080
+    volumes:
+      # Montage des fichiers statiques pour prise en compte immédiate des modifications HTML/CSS/JS
+      - ./:/usr/share/nginx/html:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - expernet-network
+
+  # Service Base de données : MariaDB initialisé automatiquement avec RequeteSQL.sql
+  db:
+    image: mariadb:10.11
+    container_name: expernet-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: expernet_db
+      MYSQL_USER: expernet_user
+      MYSQL_PASSWORD: expernet_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # Exécution automatique du script SQL à l'initialisation
+      - ./RequeteSQL.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - expernet-network
+
+  # Service Interface SQL : phpMyAdmin pour visualiser et administrer les tables créées
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: expernet-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"   # Interface phpMyAdmin : http://localhost:8081
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - expernet-network
+
+volumes:
+  db_data:
+    name: expernet_db_data
+
+networks:
+  expernet-network:
+    name: expernet-network
+    driver: bridge
