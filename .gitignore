@@ -1,0 +1,3 @@
+#ignorer tous les fichiers environnement
+environnement
+*.env
