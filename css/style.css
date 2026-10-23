@@ -1,28 +1,25 @@
 /* ==========================================================================
    Charte Graphique Expernet Campus
-   Couleurs : #003A70 | #0057A4 | #F28C28 | #F4F6F8 | #2E3440
+   Couleurs directes :
+   - Bleu foncé : #003A70
+   - Bleu vif   : #0057A4
+   - Orange     : #F28C28
+   - Gris clair : #F4F6F8
+   - Anthracite : #2E3440
    Typographies : Poppins (Titres) | Montserrat (En-têtes) | Inter (Corps)
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap');
 
-:root {
-  --brand-navy: #003A70;
-  --brand-blue: #0057A4;
-  --brand-orange: #F28C28;
-  --brand-gray: #F4F6F8;
-  --brand-dark: #2E3440;
-}
-
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--brand-dark);
+  color: #2E3440;
   background-color: #ffffff;
   font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
-  color: var(--brand-dark);
+  color: #2E3440;
 }
 
 .font-montserrat {
@@ -31,47 +28,47 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Couleurs personnalisées issues de la charte */
 .bg-brand-gray {
-  background-color: var(--brand-gray) !important;
+  background-color: #F4F6F8 !important;
 }
 
 .bg-brand-navy {
-  background-color: var(--brand-navy) !important;
+  background-color: #003A70 !important;
   color: #ffffff !important;
 }
 
 .text-brand-blue {
-  color: var(--brand-blue) !important;
+  color: #0057A4 !important;
 }
 
 .text-brand-navy {
-  color: var(--brand-navy) !important;
+  color: #003A70 !important;
 }
 
 .btn-brand-primary {
-  background-color: var(--brand-blue);
+  background-color: #0057A4;
   color: #ffffff;
   border: none;
 }
 
 .btn-brand-primary:hover {
-  background-color: var(--brand-navy);
+  background-color: #003A70;
   color: #ffffff;
 }
 
 .btn-brand-gray {
   background-color: #d8dce2;
-  color: var(--brand-dark);
+  color: #2E3440;
   border: none;
   font-weight: 600;
 }
 
 .btn-brand-gray:hover {
   background-color: #c4c9d1;
-  color: var(--brand-dark);
+  color: #2E3440;
 }
 
 .btn-brand-orange {
-  background-color: var(--brand-orange);
+  background-color: #F28C28;
   color: #ffffff;
   border: none;
 }
@@ -83,11 +80,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sidebar active item */
 .sidebar-link {
-  color: var(--brand-dark);
+  color: #2E3440;
   text-decoration: none;
   font-weight: 600;
 }
 
 .sidebar-link.active, .sidebar-link:hover {
-  color: var(--brand-blue);
+  color: #0057A4;
 }
