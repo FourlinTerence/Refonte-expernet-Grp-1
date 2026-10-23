@@ -1,22 +1,11 @@
-# Start your image with a node base image
-FROM node:22-alpine
+# Use the official Nginx image as the base image
+FROM nginx:alpine
 
+# Copy the HTML website files to the Nginx directory
+COPY ./ /usr/share/nginx/html/
 
-WORKDIR C:/Users/ltotobe.cda10/refonte-expernet-grp1/Refonte-expernet-Grp-1
+# Expose port 80 to allow external access
+EXPOSE 80
 
-# pas encore de fichier package.json donc pas besoin de cette ligne de code
-#COPY package*.json ./
-
-# Copie les dossiers locaux vers les dossier encours d-utilisation de l-image docker  (/app)
-COPY ..
-
-#COPY .npmrc .
-#RUN npm ci \
-#    && npm install -g serve@latest \
-#    && npm run build \
-#    && rm -fr node_modules
-
-EXPOSE 3000
-
-# Start the app using serve command
-CMD [ "serve", "-s", "build" ]
+# fait fonctionner Nginx 
+CMD ["nginx", "-g", "daemon off;"]
