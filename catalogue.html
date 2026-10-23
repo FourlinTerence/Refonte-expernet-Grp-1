@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expernet Campus - Catalogue de formation</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Style personnalisé charte -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- En-tête / Navigation -->
+  <header class="bg-brand-gray border-bottom">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold active text-brand-blue" href="catalogue.html">Catalogue</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mon compte
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li><a class="dropdown-item py-2" href="dashboard-etudiant.html">Espace Étudiant</a></li>
+                <li><a class="dropdown-item py-2" href="dashboard-formateur.html">Espace Formateur</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal : Grille 2 colonnes (Filtres + Formations) -->
+  <main class="flex-grow-1">
+    <div class="container-fluid px-lg-5 py-4">
+      <div class="row">
+
+        <!-- Colonne Filtre (Gauche) -->
+        <aside class="col-lg-3 col-md-4 border-end pe-lg-4 mb-4 mb-md-0">
+          <div class="p-2">
+            <h2 class="h5 fw-bold mb-4 font-montserrat">FILTRE</h2>
+
+            <!-- Filtre Filière -->
+            <div class="mb-4">
+              <p class="fw-bold mb-2">Filière</p>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-filiere" type="checkbox" value="informatique" id="fil-info">
+                <label class="form-check-label" for="fil-info">Informatique</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-filiere" type="checkbox" value="marketing" id="fil-mkt">
+                <label class="form-check-label" for="fil-mkt">Marketing</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-filiere" type="checkbox" value="reseau" id="fil-res">
+                <label class="form-check-label" for="fil-res">Réseau</label>
+              </div>
+            </div>
+
+            <!-- Filtre RNCP -->
+            <div class="mb-4">
+              <p class="fw-bold mb-2">RNCP</p>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-rncp" type="checkbox" value="5" id="rncp-5">
+                <label class="form-check-label" for="rncp-5">Niveau 5</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-rncp" type="checkbox" value="6" id="rncp-6">
+                <label class="form-check-label" for="rncp-6">Niveau 6</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-rncp" type="checkbox" value="7" id="rncp-7">
+                <label class="form-check-label" for="rncp-7">Niveau 7</label>
+              </div>
+            </div>
+
+            <!-- Filtre CPF -->
+            <div class="mb-4">
+              <p class="fw-bold mb-2">CPF</p>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-cpf" type="checkbox" value="oui" id="cpf-oui">
+                <label class="form-check-label" for="cpf-oui">Oui</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-cpf" type="checkbox" value="non" id="cpf-non">
+                <label class="form-check-label" for="cpf-non">Non</label>
+              </div>
+            </div>
+
+            <button id="reset-filters" class="btn btn-outline-secondary btn-sm w-100">Réinitialiser les filtres</button>
+          </div>
+        </aside>
+
+        <!-- Colonne Contenu (Droite) -->
+        <section class="col-lg-9 col-md-8 ps-lg-5">
+          <div class="py-2">
+            <!-- Titre de la page -->
+            <h1 class="display-6 fw-bold text-center mb-5">Catalogue de formation</h1>
+
+            <!-- Barre de recherche -->
+            <div class="row align-items-center mb-5 g-2">
+              <div class="col-auto">
+                <label for="search-formation" class="fw-bold fs-5 font-montserrat">Rechercher :</label>
+              </div>
+              <div class="col">
+                <input type="text" id="search-formation" class="form-control bg-brand-gray border-0 py-2 fs-6" placeholder="Nom de formation, spécialité, mot-clé...">
+              </div>
+            </div>
+
+            <!-- Message d'absence de résultat -->
+            <div id="no-result-msg" class="alert alert-light border text-center p-4 d-none">
+              <p class="mb-0 fw-semibold text-muted">Aucune formation ne correspond à vos critères de recherche.</p>
+            </div>
+
+            <!-- Liste des cartes de formation (Wireframe cards) -->
+            <div class="d-flex flex-column gap-4" id="formation-list">
+
+              <!-- Carte 1 : TSR Bac +2 -->
+              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="reseau" data-rncp="5" data-cpf="oui">
+                <h2 class="h5 fw-bold mb-2">TSR Bac +2</h2>
+                <p class="mb-1 text-secondary">Réseau et Cybersécurité</p>
+                <p class="mb-3 text-secondary small">RNCP Niveau 5 | Éligible CPF</p>
+                <div>
+                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                </div>
+              </article>
+
+              <!-- Carte 2 : CDA Bac +4 -->
+              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="informatique" data-rncp="6" data-cpf="oui">
+                <h2 class="h5 fw-bold mb-2">CDA Bac +4</h2>
+                <p class="mb-1 text-secondary">Développement d'Applications</p>
+                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+                <div>
+                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                </div>
+              </article>
+
+              <!-- Carte 3 : ASR Bac +4 -->
+              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="reseau" data-rncp="6" data-cpf="oui">
+                <h2 class="h5 fw-bold mb-2">ASR Bac +4</h2>
+                <p class="mb-1 text-secondary">Administrateur Systèmes et Réseaux</p>
+                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+                <div>
+                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                </div>
+              </article>
+
+              <!-- Carte 4 : Chef de Projet Digital Bac +3 -->
+              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="marketing" data-rncp="6" data-cpf="oui">
+                <h2 class="h5 fw-bold mb-2">Chef de Projet Digital Bac +3</h2>
+                <p class="mb-1 text-secondary">Marketing Digital, Webmarketing & IA</p>
+                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+                <div>
+                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                </div>
+              </article>
+
+              <!-- Carte 5 : Hacking & Cybersécurité Bac +5 -->
+              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="informatique" data-rncp="7" data-cpf="oui">
+                <h2 class="h5 fw-bold mb-2">Hacking & Cybersécurité Bac +5</h2>
+                <p class="mb-1 text-secondary">Sécurité offensive et protection des SI</p>
+                <p class="mb-3 text-secondary small">RNCP Niveau 7 | Éligible CPF</p>
+                <div>
+                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page / Footer -->
+  <footer class="bg-brand-gray py-4 border-top">
+    <div class="container">
+      <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
+        <div class="col-md-3">
+          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Mentions légales</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Politique de confidentialité</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Politique de cookie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

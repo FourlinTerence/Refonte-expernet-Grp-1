@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expernet Campus - Dashboard Formateur</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Style personnalisé charte -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- En-tête / Navigation -->
+  <header class="bg-brand-gray border-bottom">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="catalogue.html">Catalogue</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark fw-semibold active text-brand-blue" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mon compte
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li><a class="dropdown-item py-2" href="dashboard-etudiant.html">Espace Étudiant</a></li>
+                <li><a class="dropdown-item py-2 fw-bold text-brand-blue" href="dashboard-formateur.html">Espace Formateur</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item py-2 text-danger" href="index.html">Déconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal : Dashboard Formateur -->
+  <main class="flex-grow-1">
+    <div class="container-fluid px-lg-5">
+      <div class="row min-vh-100">
+
+        <!-- Barre latérale / Sidebar -->
+        <aside class="col-lg-2 col-md-3 border-end py-4">
+          <nav class="d-flex flex-column gap-3 fs-5 font-montserrat">
+            <a href="dashboard-formateur.html" class="sidebar-link active fw-bold">Dashboard</a>
+            <a href="#" class="sidebar-link">Promotions</a>
+            <a href="#" class="sidebar-link">Etudiants</a>
+            <a href="#" class="sidebar-link">Evaluations</a>
+            <a href="#" class="sidebar-link">Emargement</a>
+          </nav>
+        </aside>
+
+        <!-- Zone de contenu -->
+        <section class="col-lg-10 col-md-9 py-4 ps-lg-5">
+
+          <!-- Message de bienvenue -->
+          <div class="mb-4">
+            <h1 class="h5 fw-normal font-montserrat">Bonjour John</h1>
+          </div>
+
+          <!-- Bandeau Statistiques Présence (Fond gris comme sur le wireframe) -->
+          <div class="bg-brand-gray p-4 p-lg-5 mb-5">
+            <div class="row text-center font-montserrat">
+              <div class="col-4">
+                <p class="display-6 fw-bold mb-1">28</p>
+                <p class="fs-5 fw-bold mb-0">Etudiants</p>
+              </div>
+              <div class="col-4">
+                <p class="display-6 fw-bold mb-1">26</p>
+                <p class="fs-5 fw-bold mb-0">Présents</p>
+              </div>
+              <div class="col-4">
+                <p class="display-6 fw-bold mb-1 text-danger">2</p>
+                <p class="fs-5 fw-bold mb-0">absents</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Alertes (Fond blanc) -->
+          <div class="mb-5 ps-2">
+            <h2 class="h4 fw-bold mb-4 font-montserrat">Alertes</h2>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-danger rounded-circle p-2"> </span>
+                <p class="h4 fw-bold font-montserrat mb-0">Eudiant absent depuis 3 jours</p>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-warning rounded-circle p-2"> </span>
+                <p class="h4 fw-bold font-montserrat mb-0">Etudiant absent depuis 2 jours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Promotions Suivies (Fond gris comme sur le wireframe) -->
+          <div class="bg-brand-gray p-4 p-lg-5 mb-4">
+            <h2 class="h4 fw-bold mb-4 font-montserrat">Promotions suivis</h2>
+            <ul class="list-unstyled mb-0 font-montserrat fs-4 fw-bold ps-2">
+              <li class="mb-3 position-relative ps-3">&bull; CDA 2026</li>
+              <li class="mb-3 position-relative ps-3">&bull; TSRS 2026</li>
+              <li class="position-relative ps-3">&bull; ARS 2026</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page / Footer -->
+  <footer class="bg-brand-gray py-4 border-top">
+    <div class="container">
+      <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
+        <div class="col-md-3">
+          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Mentions légales</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Politique de confidentialité</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="text-dark text-decoration-none">Politique de cookie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
