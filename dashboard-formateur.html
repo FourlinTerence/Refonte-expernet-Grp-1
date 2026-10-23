@@ -12,17 +12,20 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- En-tête / Navigation -->
-  <header class="bg-brand-gray border-bottom">
-    <nav class="navbar navbar-expand-lg py-3">
+  <header class="bg-brand-gray border-bottom border-top-brand-blue">
+    <nav class="navbar navbar-expand-lg py-2">
       <div class="container">
-        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        <!-- Logo officiel Expernet -->
+        <a class="navbar-brand py-1" href="index.html">
+          <img src="img/logo.png" alt="Expernet Campus" height="46" class="d-inline-block align-text-top">
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-6 font-montserrat">
             <li class="nav-item">
               <a class="nav-link text-dark fw-semibold" href="catalogue.html">Catalogue</a>
             </li>
@@ -30,7 +33,7 @@
               <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-dark fw-semibold active text-brand-blue" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-brand-blue fw-bold active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Mon compte
               </a>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
@@ -53,12 +56,12 @@
 
         <!-- Barre latérale / Sidebar -->
         <aside class="col-lg-2 col-md-3 border-end py-4">
-          <nav class="d-flex flex-column gap-3 fs-5 font-montserrat">
-            <a href="dashboard-formateur.html" class="sidebar-link active fw-bold">Dashboard</a>
+          <nav class="d-flex flex-column gap-2 fs-6 font-montserrat">
+            <a href="dashboard-formateur.html" class="sidebar-link active">Dashboard</a>
             <a href="#" class="sidebar-link">Promotions</a>
-            <a href="#" class="sidebar-link">Etudiants</a>
-            <a href="#" class="sidebar-link">Evaluations</a>
-            <a href="#" class="sidebar-link">Emargement</a>
+            <a href="#" class="sidebar-link">Étudiants</a>
+            <a href="#" class="sidebar-link">Évaluations</a>
+            <a href="#" class="sidebar-link">Émargement</a>
           </nav>
         </aside>
 
@@ -67,49 +70,49 @@
 
           <!-- Message de bienvenue -->
           <div class="mb-4">
-            <h1 class="h5 fw-normal font-montserrat">Bonjour John</h1>
+            <h1 class="h5 fw-normal font-montserrat">Bonjour <strong class="text-brand-blue">John</strong></h1>
           </div>
 
-          <!-- Bandeau Statistiques Présence (Fond gris comme sur le wireframe) -->
-          <div class="bg-brand-gray p-4 p-lg-5 mb-5">
+          <!-- Bandeau Statistiques Présence -->
+          <div class="bg-brand-gray p-4 p-lg-5 mb-5 border-start-brand-blue shadow-sm">
             <div class="row text-center font-montserrat">
-              <div class="col-4">
-                <p class="display-6 fw-bold mb-1">28</p>
-                <p class="fs-5 fw-bold mb-0">Etudiants</p>
+              <div class="col-4 border-end">
+                <p class="display-6 fw-bold mb-1 text-brand-blue">28</p>
+                <p class="fs-6 fw-bold mb-0 text-secondary">Étudiants inscrits</p>
+              </div>
+              <div class="col-4 border-end">
+                <p class="display-6 fw-bold mb-1 text-success">26</p>
+                <p class="fs-6 fw-bold mb-0 text-secondary">Présents aujourd'hui</p>
               </div>
               <div class="col-4">
-                <p class="display-6 fw-bold mb-1">26</p>
-                <p class="fs-5 fw-bold mb-0">Présents</p>
-              </div>
-              <div class="col-4">
-                <p class="display-6 fw-bold mb-1 text-danger">2</p>
-                <p class="fs-5 fw-bold mb-0">absents</p>
+                <p class="display-6 fw-bold mb-1 text-brand-orange">2</p>
+                <p class="fs-6 fw-bold mb-0 text-secondary">Absents</p>
               </div>
             </div>
           </div>
 
-          <!-- Section Alertes (Fond blanc) -->
+          <!-- Section Alertes -->
           <div class="mb-5 ps-2">
-            <h2 class="h4 fw-bold mb-4 font-montserrat">Alertes</h2>
+            <h2 class="h5 fw-bold mb-3 font-montserrat text-brand-blue border-start-brand-blue ps-3">Alertes assiduité</h2>
             <div class="d-flex flex-column gap-3">
-              <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-danger rounded-circle p-2"> </span>
-                <p class="h4 fw-bold font-montserrat mb-0">Eudiant absent depuis 3 jours</p>
+              <div class="d-flex align-items-center gap-3 p-3 bg-white border border-warning shadow-sm">
+                <span class="badge badge-brand-orange p-2">Alerte</span>
+                <p class="fs-6 fw-bold font-montserrat mb-0">Étudiant absent depuis 3 jours consécutifs</p>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-warning rounded-circle p-2"> </span>
-                <p class="h4 fw-bold font-montserrat mb-0">Etudiant absent depuis 2 jours</p>
+              <div class="d-flex align-items-center gap-3 p-3 bg-white border border-light shadow-sm">
+                <span class="badge bg-secondary p-2">Info</span>
+                <p class="fs-6 fw-bold font-montserrat mb-0 text-secondary">Étudiant absent depuis 2 jours</p>
               </div>
             </div>
           </div>
 
-          <!-- Section Promotions Suivies (Fond gris comme sur le wireframe) -->
-          <div class="bg-brand-gray p-4 p-lg-5 mb-4">
-            <h2 class="h4 fw-bold mb-4 font-montserrat">Promotions suivis</h2>
-            <ul class="list-unstyled mb-0 font-montserrat fs-4 fw-bold ps-2">
-              <li class="mb-3 position-relative ps-3">&bull; CDA 2026</li>
-              <li class="mb-3 position-relative ps-3">&bull; TSRS 2026</li>
-              <li class="position-relative ps-3">&bull; ARS 2026</li>
+          <!-- Section Promotions Suivies -->
+          <div class="bg-brand-gray p-4 p-lg-5 mb-4 shadow-sm">
+            <h2 class="h5 fw-bold mb-4 font-montserrat text-brand-blue">Promotions suivies</h2>
+            <ul class="list-unstyled mb-0 font-montserrat fs-5 fw-bold ps-2">
+              <li class="mb-3"><span class="text-brand-blue me-2">&bull;</span> CDA 2026 <span class="badge badge-brand-blue fs-6 ms-2">24 apprenants</span></li>
+              <li class="mb-3"><span class="text-brand-blue me-2">&bull;</span> TSRS 2026 <span class="badge badge-brand-blue fs-6 ms-2">18 apprenants</span></li>
+              <li><span class="text-brand-blue me-2">&bull;</span> ASR 2026 <span class="badge badge-brand-blue fs-6 ms-2">16 apprenants</span></li>
             </ul>
           </div>
 
@@ -120,11 +123,11 @@
   </main>
 
   <!-- Pied de page / Footer -->
-  <footer class="bg-brand-gray py-4 border-top">
+  <footer class="bg-brand-gray py-4 border-top border-top-brand-blue">
     <div class="container">
       <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
         <div class="col-md-3">
-          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+          <img src="img/logo.png" alt="Expernet Campus" height="38">
         </div>
         <div class="col-md-3">
           <a href="#" class="text-dark text-decoration-none">Mentions légales</a>

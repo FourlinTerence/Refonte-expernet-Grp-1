@@ -12,19 +12,22 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- En-tête / Navigation -->
-  <header class="bg-brand-gray border-bottom">
-    <nav class="navbar navbar-expand-lg py-3">
+  <header class="bg-brand-gray border-bottom border-top-brand-blue">
+    <nav class="navbar navbar-expand-lg py-2">
       <div class="container">
-        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        <!-- Logo officiel Expernet -->
+        <a class="navbar-brand py-1" href="index.html">
+          <img src="img/logo.png" alt="Expernet Campus" height="46" class="d-inline-block align-text-top">
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-6 font-montserrat">
             <li class="nav-item">
-              <a class="nav-link text-dark fw-semibold active text-brand-blue" href="catalogue.html">Catalogue</a>
+              <a class="nav-link text-brand-blue fw-bold active" href="catalogue.html">Catalogue</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
@@ -49,17 +52,22 @@
 
     <!-- Lien retour -->
     <div class="container py-3">
-      <a href="catalogue.html" class="text-dark fw-semibold text-decoration-none font-montserrat small">&lt;-- Retour catalogue</a>
+      <a href="catalogue.html" class="text-brand-blue fw-semibold text-decoration-none font-montserrat small">&lt;-- Retour au catalogue</a>
     </div>
 
-    <!-- En-tête Fiche Formation (Bannière Grise) -->
-    <section class="bg-brand-gray py-5">
-      <div class="container py-3">
-        <h1 class="h3 fw-bold mb-3 font-montserrat">TSRS – Technicien Systèmes Réseaux et Sécurité</h1>
-        <p class="fs-5 fw-bold mb-4 font-montserrat">BAC +2 | RNCP | CPF</p>
+    <!-- En-tête Fiche Formation (Bannière Grise avec accents) -->
+    <section class="bg-brand-gray py-5 border-start-brand-blue">
+      <div class="container py-2">
+        <h1 class="h3 fw-bold mb-3 font-montserrat text-brand-navy">TSRS – Technicien Systèmes Réseaux et Sécurité</h1>
+        <div class="mb-4">
+          <span class="badge badge-brand-blue fs-6 me-2">BAC +2</span>
+          <span class="badge badge-brand-blue fs-6 me-2">RNCP Niveau 5</span>
+          <span class="badge badge-brand-orange fs-6">Éligible CPF</span>
+        </div>
         <div>
-          <button type="button" class="btn btn-link text-dark fw-bold text-decoration-none font-montserrat p-0 fs-5" data-bs-toggle="modal" data-bs-target="#inscriptionModal">
-            [ S'inscrire ]
+          <!-- Bouton d'inscription orange pour attirer l'action sans excès -->
+          <button type="button" class="btn btn-brand-orange px-4 py-2 fs-6 rounded-0 font-montserrat fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#inscriptionModal">
+            S'inscrire à cette formation
           </button>
         </div>
       </div>
@@ -68,7 +76,7 @@
     <!-- Section Objectifs -->
     <section class="py-4">
       <div class="container">
-        <h2 class="display-6 fw-bold mb-3 font-montserrat">OBJECTIFS</h2>
+        <h2 class="h4 fw-bold mb-3 font-montserrat text-brand-blue border-start-brand-blue ps-3">OBJECTIFS</h2>
       </div>
       <div class="bg-brand-gray py-4">
         <div class="container">
@@ -82,13 +90,13 @@
     <!-- Section Prérequis -->
     <section class="py-4">
       <div class="container">
-        <h2 class="display-6 fw-bold mb-3 font-montserrat">PREREQUIS</h2>
+        <h2 class="h4 fw-bold mb-3 font-montserrat text-brand-blue border-start-brand-blue ps-3">PREREQUIS</h2>
       </div>
       <div class="bg-brand-gray py-4">
         <div class="container">
-          <ul class="mb-0 fs-5 fw-bold font-montserrat list-unstyled ps-3">
-            <li class="mb-2 position-relative ps-3">&bull; BAC</li>
-            <li class="position-relative ps-3">&bull; Bases informatique</li>
+          <ul class="mb-0 fs-6 fw-semibold font-montserrat list-unstyled ps-3">
+            <li class="mb-2"><span class="text-brand-blue me-2">&bull;</span> Titulaire d'un diplôme de niveau BAC (ou équivalent)</li>
+            <li><span class="text-brand-blue me-2">&bull;</span> Bonnes bases en informatique et forte appétence pour les technologies</li>
           </ul>
         </div>
       </div>
@@ -97,14 +105,14 @@
     <!-- Section Programme -->
     <section class="py-4">
       <div class="container">
-        <h2 class="display-6 fw-bold mb-3 font-montserrat">PROGRAMME</h2>
+        <h2 class="h4 fw-bold mb-3 font-montserrat text-brand-blue border-start-brand-blue ps-3">PROGRAMME</h2>
       </div>
       <div class="bg-brand-gray py-4">
         <div class="container">
-          <ul class="mb-0 fs-5 fw-bold font-montserrat list-unstyled ps-3">
-            <li class="mb-2 position-relative ps-3">&bull; Linux</li>
-            <li class="mb-2 position-relative ps-3">&bull; Virtualisation</li>
-            <li class="position-relative ps-3">&bull; Sécurité</li>
+          <ul class="mb-0 fs-6 fw-semibold font-montserrat list-unstyled ps-3">
+            <li class="mb-2"><span class="text-brand-orange me-2">&bull;</span> Administration des systèmes Linux & Windows Server</li>
+            <li class="mb-2"><span class="text-brand-orange me-2">&bull;</span> Virtualisation, conteneurisation et infrastructure Cloud</li>
+            <li><span class="text-brand-orange me-2">&bull;</span> Cybersécurité, pare-feu et protection des accès réseaux</li>
           </ul>
         </div>
       </div>
@@ -113,14 +121,14 @@
     <!-- Section Débouchés -->
     <section class="py-4 mb-4">
       <div class="container">
-        <h2 class="display-6 fw-bold mb-3 font-montserrat">DEBOUCHES</h2>
+        <h2 class="h4 fw-bold mb-3 font-montserrat text-brand-blue border-start-brand-blue ps-3">DEBOUCHES</h2>
       </div>
       <div class="bg-brand-gray py-4">
         <div class="container">
-          <ul class="mb-0 fs-5 fw-bold font-montserrat list-unstyled ps-3">
-            <li class="mb-2 position-relative ps-3">&bull; Technicien de réseau</li>
-            <li class="mb-2 position-relative ps-3">&bull; Technicien support</li>
-            <li class="position-relative ps-3">&bull; Administrateur junior</li>
+          <ul class="mb-0 fs-6 fw-semibold font-montserrat list-unstyled ps-3">
+            <li class="mb-2"><span class="text-brand-blue me-2">&bull;</span> Technicien supérieur systèmes et réseaux</li>
+            <li class="mb-2"><span class="text-brand-blue me-2">&bull;</span> Technicien support informatique & helpdesk</li>
+            <li><span class="text-brand-blue me-2">&bull;</span> Administrateur junior d'infrastructures réseaux</li>
           </ul>
         </div>
       </div>
@@ -132,12 +140,12 @@
   <div class="modal fade" id="inscriptionModal" tabindex="-1" aria-labelledby="inscriptionModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-0">
-        <div class="modal-header bg-brand-gray">
-          <h5 class="modal-title fw-bold" id="inscriptionModalLabel">Candidater à cette formation</h5>
+        <div class="modal-header bg-brand-gray border-bottom border-top-brand-blue">
+          <h5 class="modal-title fw-bold text-brand-navy" id="inscriptionModalLabel">Candidater à TSRS Bac +2</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
         </div>
         <div class="modal-body p-4">
-          <form id="form-inscription" onsubmit="event.preventDefault(); alert('Votre demande d\'inscription a été transmise avec succès !'); bootstrap.Modal.getInstance(document.getElementById('inscriptionModal')).hide();">
+          <form id="form-inscription" onsubmit="event.preventDefault(); alert('Votre candidature a bien été enregistrée ! L\'équipe Expernet Campus vous recontactera rapidement.'); bootstrap.Modal.getInstance(document.getElementById('inscriptionModal')).hide();">
             <div class="mb-3">
               <label for="nom" class="form-label fw-semibold">Nom</label>
               <input type="text" class="form-control rounded-0" id="nom" required>
@@ -165,11 +173,11 @@
   </div>
 
   <!-- Pied de page / Footer -->
-  <footer class="bg-brand-gray py-4 border-top">
+  <footer class="bg-brand-gray py-4 border-top border-top-brand-blue">
     <div class="container">
       <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
         <div class="col-md-3">
-          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+          <img src="img/logo.png" alt="Expernet Campus" height="38">
         </div>
         <div class="col-md-3">
           <a href="#" class="text-dark text-decoration-none">Mentions légales</a>

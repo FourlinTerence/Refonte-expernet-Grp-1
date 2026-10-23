@@ -12,19 +12,22 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- En-tête / Navigation -->
-  <header class="bg-brand-gray border-bottom">
-    <nav class="navbar navbar-expand-lg py-3">
+  <header class="bg-brand-gray border-bottom border-top-brand-blue">
+    <nav class="navbar navbar-expand-lg py-2">
       <div class="container">
-        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        <!-- Logo officiel Expernet -->
+        <a class="navbar-brand py-1" href="index.html">
+          <img src="img/logo.png" alt="Expernet Campus" height="46" class="d-inline-block align-text-top">
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-6 font-montserrat">
             <li class="nav-item">
-              <a class="nav-link text-dark fw-semibold active text-brand-blue" href="catalogue.html">Catalogue</a>
+              <a class="nav-link text-brand-blue fw-bold active" href="catalogue.html">Catalogue</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
@@ -52,7 +55,7 @@
         <!-- Colonne Filtre (Gauche) -->
         <aside class="col-lg-3 col-md-4 border-end pe-lg-4 mb-4 mb-md-0">
           <div class="p-2">
-            <h2 class="h5 fw-bold mb-4 font-montserrat">FILTRE</h2>
+            <h2 class="h5 fw-bold mb-4 font-montserrat text-brand-blue pb-2 border-bottom">FILTRE</h2>
 
             <!-- Filtre Filière -->
             <div class="mb-4">
@@ -101,7 +104,7 @@
               </div>
             </div>
 
-            <button id="reset-filters" class="btn btn-outline-secondary btn-sm w-100">Réinitialiser les filtres</button>
+            <button id="reset-filters" class="btn btn-outline-secondary btn-sm w-100 font-montserrat">Réinitialiser les filtres</button>
           </div>
         </aside>
 
@@ -109,7 +112,7 @@
         <section class="col-lg-9 col-md-8 ps-lg-5">
           <div class="py-2">
             <!-- Titre de la page -->
-            <h1 class="display-6 fw-bold text-center mb-5">Catalogue de formation</h1>
+            <h1 class="display-6 fw-bold text-center mb-5 font-montserrat">Catalogue de <span class="text-brand-blue">formation</span></h1>
 
             <!-- Barre de recherche -->
             <div class="row align-items-center mb-5 g-2">
@@ -117,7 +120,7 @@
                 <label for="search-formation" class="fw-bold fs-5 font-montserrat">Rechercher :</label>
               </div>
               <div class="col">
-                <input type="text" id="search-formation" class="form-control bg-brand-gray border-0 py-2 fs-6" placeholder="Nom de formation, spécialité, mot-clé...">
+                <input type="text" id="search-formation" class="form-control bg-brand-gray border-0 py-2 fs-6" placeholder="Rechercher par titre, compétence, niveau...">
               </div>
             </div>
 
@@ -126,56 +129,81 @@
               <p class="mb-0 fw-semibold text-muted">Aucune formation ne correspond à vos critères de recherche.</p>
             </div>
 
-            <!-- Liste des cartes de formation (Wireframe cards) -->
+            <!-- Liste des cartes de formation -->
             <div class="d-flex flex-column gap-4" id="formation-list">
 
               <!-- Carte 1 : TSR Bac +2 -->
-              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="reseau" data-rncp="5" data-cpf="oui">
-                <h2 class="h5 fw-bold mb-2">TSR Bac +2</h2>
-                <p class="mb-1 text-secondary">Réseau et Cybersécurité</p>
-                <p class="mb-3 text-secondary small">RNCP Niveau 5 | Éligible CPF</p>
+              <article class="formation-card bg-brand-gray p-4 p-lg-5 border-start-brand-blue shadow-sm" data-filiere="reseau" data-rncp="5" data-cpf="oui">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="h5 fw-bold mb-0 text-brand-blue">TSR Bac +2</h2>
+                  <span class="badge badge-brand-blue">Niveau 5</span>
+                </div>
+                <p class="mb-1 text-secondary fw-semibold">Réseau et Cybersécurité</p>
+                <p class="mb-3 text-secondary small">
+                  Titre RNCP Niveau 5 &bull; <span class="badge badge-brand-orange">Éligible CPF</span>
+                </p>
                 <div>
-                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                  <a href="formation-detail.html" class="text-brand-blue fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
                 </div>
               </article>
 
               <!-- Carte 2 : CDA Bac +4 -->
-              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="informatique" data-rncp="6" data-cpf="oui">
-                <h2 class="h5 fw-bold mb-2">CDA Bac +4</h2>
-                <p class="mb-1 text-secondary">Développement d'Applications</p>
-                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+              <article class="formation-card bg-brand-gray p-4 p-lg-5 border-start-brand-blue shadow-sm" data-filiere="informatique" data-rncp="6" data-cpf="oui">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="h5 fw-bold mb-0 text-brand-blue">CDA Bac +4</h2>
+                  <span class="badge badge-brand-blue">Niveau 6</span>
+                </div>
+                <p class="mb-1 text-secondary fw-semibold">Développement d'Applications</p>
+                <p class="mb-3 text-secondary small">
+                  Titre RNCP Niveau 6 &bull; <span class="badge badge-brand-orange">Éligible CPF</span>
+                </p>
                 <div>
-                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                  <a href="formation-detail.html" class="text-brand-blue fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
                 </div>
               </article>
 
               <!-- Carte 3 : ASR Bac +4 -->
-              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="reseau" data-rncp="6" data-cpf="oui">
-                <h2 class="h5 fw-bold mb-2">ASR Bac +4</h2>
-                <p class="mb-1 text-secondary">Administrateur Systèmes et Réseaux</p>
-                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+              <article class="formation-card bg-brand-gray p-4 p-lg-5 border-start-brand-blue shadow-sm" data-filiere="reseau" data-rncp="6" data-cpf="oui">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="h5 fw-bold mb-0 text-brand-blue">ASR Bac +4</h2>
+                  <span class="badge badge-brand-blue">Niveau 6</span>
+                </div>
+                <p class="mb-1 text-secondary fw-semibold">Administrateur Systèmes et Réseaux</p>
+                <p class="mb-3 text-secondary small">
+                  Titre RNCP Niveau 6 &bull; <span class="badge badge-brand-orange">Éligible CPF</span>
+                </p>
                 <div>
-                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                  <a href="formation-detail.html" class="text-brand-blue fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
                 </div>
               </article>
 
               <!-- Carte 4 : Chef de Projet Digital Bac +3 -->
-              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="marketing" data-rncp="6" data-cpf="oui">
-                <h2 class="h5 fw-bold mb-2">Chef de Projet Digital Bac +3</h2>
-                <p class="mb-1 text-secondary">Marketing Digital, Webmarketing & IA</p>
-                <p class="mb-3 text-secondary small">RNCP Niveau 6 | Éligible CPF</p>
+              <article class="formation-card bg-brand-gray p-4 p-lg-5 border-start-brand-blue shadow-sm" data-filiere="marketing" data-rncp="6" data-cpf="oui">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="h5 fw-bold mb-0 text-brand-blue">Chef de Projet Digital Bac +3</h2>
+                  <span class="badge badge-brand-blue">Niveau 6</span>
+                </div>
+                <p class="mb-1 text-secondary fw-semibold">Marketing Digital, Stratégie Web & IA</p>
+                <p class="mb-3 text-secondary small">
+                  Titre RNCP Niveau 6 &bull; <span class="badge badge-brand-orange">Éligible CPF</span>
+                </p>
                 <div>
-                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                  <a href="formation-detail.html" class="text-brand-blue fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
                 </div>
               </article>
 
               <!-- Carte 5 : Hacking & Cybersécurité Bac +5 -->
-              <article class="formation-card bg-brand-gray p-4 p-lg-5" data-filiere="informatique" data-rncp="7" data-cpf="oui">
-                <h2 class="h5 fw-bold mb-2">Hacking & Cybersécurité Bac +5</h2>
-                <p class="mb-1 text-secondary">Sécurité offensive et protection des SI</p>
-                <p class="mb-3 text-secondary small">RNCP Niveau 7 | Éligible CPF</p>
+              <article class="formation-card bg-brand-gray p-4 p-lg-5 border-start-brand-blue shadow-sm" data-filiere="informatique" data-rncp="7" data-cpf="oui">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h2 class="h5 fw-bold mb-0 text-brand-blue">Hacking & Cybersécurité Bac +5</h2>
+                  <span class="badge badge-brand-blue">Niveau 7</span>
+                </div>
+                <p class="mb-1 text-secondary fw-semibold">Sécurité offensive et protection des SI</p>
+                <p class="mb-3 text-secondary small">
+                  Titre RNCP Niveau 7 &bull; <span class="badge badge-brand-orange">Éligible CPF</span>
+                </p>
                 <div>
-                  <a href="formation-detail.html" class="text-dark fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
+                  <a href="formation-detail.html" class="text-brand-blue fw-bold text-decoration-none font-montserrat">[ VOIR FICHE ]</a>
                 </div>
               </article>
 
@@ -188,11 +216,11 @@
   </main>
 
   <!-- Pied de page / Footer -->
-  <footer class="bg-brand-gray py-4 border-top">
+  <footer class="bg-brand-gray py-4 border-top border-top-brand-blue">
     <div class="container">
       <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
         <div class="col-md-3">
-          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+          <img src="img/logo.png" alt="Expernet Campus" height="38">
         </div>
         <div class="col-md-3">
           <a href="#" class="text-dark text-decoration-none">Mentions légales</a>

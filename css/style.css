@@ -3,7 +3,7 @@
    
    Palette de couleurs officielles du projet :
    - Bleu foncé (Primaire / En-têtes) : #003A70
-   - Bleu vif (Boutons / Liens actifs) : #0057A4
+   - Bleu vif / clair de la charte    : #0057A4
    - Orange (Accents / Mises en avant)  : #F28C28
    - Gris clair (Fonds de cartes / sections) : #F4F6F8
    - Anthracite (Couleur principale des textes) : #2E3440
@@ -14,125 +14,156 @@
    - Inter : Utilisée pour le corps de texte standard
    ========================================================================== */
 
-/* Importation des polices Google Fonts nécessaires */
+/* Importation des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap');
 
 /* --------------------------------------------------------------------------
-   1. STYLES GLOBAUX & TYPOGRAPHIE DE BASE
+   1. STYLES GLOBAUX & TYPOGRAPHIE
    -------------------------------------------------------------------------- */
-
-/* Réglages généraux du document */
 body {
-  font-family: 'Inter', sans-serif; /* Police fluide et lisible pour la lecture */
-  color: #2E3440;                   /* Couleur anthracite issue de la charte */
-  background-color: #ffffff;        /* Fond de page blanc par défaut */
-  font-size: 14px;                  /* Taille de texte définie dans la charte */
+  font-family: 'Inter', sans-serif;
+  color: #2E3440;
+  background-color: #ffffff;
+  font-size: 14px;
 }
 
-/* Titres de niveau 1 à 6 */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif; /* Police géométrique moderne pour les titres */
-  color: #2E3440;                     /* Couleur anthracite pour un bon contraste */
+  font-family: 'Poppins', sans-serif;
+  color: #2E3440;
 }
 
-/* Classe utilitaire pour appliquer la police Montserrat quand nécessaire */
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
 
 /* --------------------------------------------------------------------------
    2. COULEURS D'ARRIÈRE-PLAN (BACKGROUNDS)
-   --------------------------------------------------------------------------
-   Remarque sur le '!important' :
-   Bootstrap possède ses propres classes utilitaires (comme .bg-light, etc.) 
-   qui utilisent '!important'. L'ajout de '!important' ici garantit que 
-   notre couleur personnalisée aura toujours la priorité absolue sur les styles 
-   du framework Bootstrap.
    -------------------------------------------------------------------------- */
-
-/* Fond gris clair pour les sections et les cartes (reproduit les wireframes) */
 .bg-brand-gray {
   background-color: #F4F6F8 !important;
 }
 
-/* Fond bleu foncé officiel Expernet */
 .bg-brand-navy {
   background-color: #003A70 !important;
-  color: #ffffff !important; /* Texte blanc automatique pour la lisibilité */
+  color: #ffffff !important;
+}
+
+.bg-brand-blue {
+  background-color: #0057A4 !important;
+  color: #ffffff !important;
+}
+
+.bg-brand-orange {
+  background-color: #F28C28 !important;
+  color: #ffffff !important;
 }
 
 /* --------------------------------------------------------------------------
-   3. COULEURS DE TEXTE PERSONNALISÉES
+   3. COULEURS DE TEXTE
    -------------------------------------------------------------------------- */
-
-/* Texte bleu vif (utilisé pour les éléments actifs ou liens importants) */
 .text-brand-blue {
   color: #0057A4 !important;
 }
 
-/* Texte bleu foncé officiel */
 .text-brand-navy {
   color: #003A70 !important;
 }
 
-/* --------------------------------------------------------------------------
-   4. BOUTONS PERSONNALISÉS
-   -------------------------------------------------------------------------- */
+.text-brand-orange {
+  color: #F28C28 !important;
+}
 
-/* Bouton principal bleu vif */
+/* --------------------------------------------------------------------------
+   4. BORDURES ACCENTUÉES
+   -------------------------------------------------------------------------- */
+.border-top-brand-blue {
+  border-top: 4px solid #0057A4 !important;
+}
+
+.border-top-brand-orange {
+  border-top: 4px solid #F28C28 !important;
+}
+
+.border-start-brand-blue {
+  border-left: 4px solid #0057A4 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. BOUTONS
+   -------------------------------------------------------------------------- */
+/* Bouton bleu vif de la charte */
 .btn-brand-primary {
   background-color: #0057A4;
   color: #ffffff;
   border: none;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Effet au survol du bouton principal (devient bleu foncé) */
 .btn-brand-primary:hover {
   background-color: #003A70;
   color: #ffffff;
 }
 
-/* Bouton gris neutre (utilisé pour 'Voir le catalogue' ou 'Signer la présence') */
+/* Bouton gris neutre */
 .btn-brand-gray {
   background-color: #d8dce2;
   color: #2E3440;
   border: none;
   font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Effet au survol du bouton gris (s'assombrit légèrement) */
 .btn-brand-gray:hover {
   background-color: #c4c9d1;
   color: #2E3440;
 }
 
-/* Bouton accent orange */
+/* Bouton orange d'accentuation (Appels à l'action importants comme S'inscrire) */
 .btn-brand-orange {
   background-color: #F28C28;
   color: #ffffff;
   border: none;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Effet au survol du bouton orange */
 .btn-brand-orange:hover {
   background-color: #d9781d;
   color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
-   5. NAVIGATION LATÉRALE (SIDEBAR DASHBOARDS)
+   6. BADGES DE COULEUR
    -------------------------------------------------------------------------- */
+.badge-brand-blue {
+  background-color: #0057A4;
+  color: #ffffff;
+}
 
-/* Liens des barres latérales des tableaux de bord */
+.badge-brand-orange {
+  background-color: #F28C28;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   7. NAVIGATION ET SIDEBAR
+   -------------------------------------------------------------------------- */
+.nav-link:hover {
+  color: #0057A4 !important;
+}
+
 .sidebar-link {
   color: #2E3440;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
+  padding: 6px 10px;
+  border-left: 3px solid transparent;
 }
 
-/* État actif ou survolé du lien de navigation latérale */
 .sidebar-link.active, 
 .sidebar-link:hover {
-  color: #0057A4; /* Devient bleu vif au survol ou s'il est sélectionné */
+  color: #0057A4;
+  border-left: 3px solid #0057A4;
+  background-color: #F4F6F8;
 }

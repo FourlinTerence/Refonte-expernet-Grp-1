@@ -12,17 +12,20 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- En-tête / Navigation -->
-  <header class="bg-brand-gray border-bottom">
-    <nav class="navbar navbar-expand-lg py-3">
+  <header class="bg-brand-gray border-bottom border-top-brand-blue">
+    <nav class="navbar navbar-expand-lg py-2">
       <div class="container">
-        <a class="navbar-brand fw-bold fs-3 font-montserrat text-brand-navy" href="index.html">Logo</a>
+        <!-- Logo officiel Expernet -->
+        <a class="navbar-brand py-1" href="index.html">
+          <img src="img/logo.png" alt="Expernet Campus" height="46" class="d-inline-block align-text-top">
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-5 font-montserrat">
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 fs-6 font-montserrat">
             <li class="nav-item">
               <a class="nav-link text-dark fw-semibold" href="catalogue.html">Catalogue</a>
             </li>
@@ -30,7 +33,7 @@
               <a class="nav-link text-dark fw-semibold" href="index.html#campus">Campus</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-dark fw-semibold active text-brand-blue" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-brand-blue fw-bold active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Mon compte
               </a>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
@@ -53,11 +56,11 @@
 
         <!-- Barre latérale / Sidebar -->
         <aside class="col-lg-2 col-md-3 border-end py-4">
-          <nav class="d-flex flex-column gap-3 fs-5 font-montserrat">
-            <a href="dashboard-etudiant.html" class="sidebar-link active fw-bold">Dashboard</a>
+          <nav class="d-flex flex-column gap-2 fs-6 font-montserrat">
+            <a href="dashboard-etudiant.html" class="sidebar-link active">Dashboard</a>
             <a href="#" class="sidebar-link">Mes cours</a>
-            <a href="#" class="sidebar-link">Emmargement</a>
-            <a href="#" class="sidebar-link">Profile</a>
+            <a href="#" class="sidebar-link">Émargement</a>
+            <a href="#" class="sidebar-link">Profil</a>
           </nav>
         </aside>
 
@@ -66,27 +69,30 @@
 
           <!-- Message de bienvenue -->
           <div class="mb-4">
-            <h1 class="h5 fw-normal font-montserrat">Bonjour John</h1>
+            <h1 class="h5 fw-normal font-montserrat">Bonjour <strong class="text-brand-blue">John</strong></h1>
           </div>
 
-          <!-- Bloc Formation Actuelle (Fond gris comme sur le wireframe) -->
-          <div class="bg-brand-gray p-4 p-lg-5 mb-5">
-            <h2 class="h5 fw-bold mb-3 font-montserrat">Formation actuelle</h2>
-            <p class="h4 fw-bold mb-2 font-montserrat">CDA BAC +4</p>
-            <p class="h5 fw-bold mb-0 font-montserrat">Promotion 2026</p>
+          <!-- Bloc Formation Actuelle -->
+          <div class="bg-brand-gray p-4 p-lg-5 mb-5 border-start-brand-blue shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h2 class="h5 fw-bold mb-0 font-montserrat">Formation actuelle</h2>
+              <span class="badge badge-brand-blue">En cours</span>
+            </div>
+            <p class="h3 fw-bold mb-2 font-montserrat text-brand-blue">CDA BAC +4</p>
+            <p class="h6 fw-bold mb-0 font-montserrat text-secondary">Promotion 2026 &bull; <span class="text-brand-orange">Campus Le Port</span></p>
           </div>
 
           <!-- Bloc Assiduité -->
           <div class="mb-5 ps-2">
-            <h3 class="h5 fw-bold mb-2 font-montserrat">Assiduité</h3>
-            <p class="display-5 fw-bold mb-2 font-montserrat">96%</p>
-            <p class="fs-6 font-montserrat mb-1">Présence sur les 30 derniers jours</p>
+            <h3 class="h5 fw-bold mb-2 font-montserrat">Assiduité globale</h3>
+            <p class="display-5 fw-bold mb-1 font-montserrat text-brand-blue">96%</p>
+            <p class="fs-6 font-montserrat mb-1 text-secondary">Présence sur les 30 derniers jours</p>
             <p id="presence-status" class="small text-muted mb-0">Statut : Émargement en attente pour la session</p>
           </div>
 
-          <!-- Bouton Signer la présence (Bouton centré) -->
+          <!-- Bouton Signer la présence (Bleu clair de la charte) -->
           <div class="text-center py-4">
-            <button id="btn-signer-presence" class="btn btn-brand-gray px-5 py-3 fs-5 font-montserrat fw-bold rounded-0">
+            <button id="btn-signer-presence" class="btn btn-brand-primary px-5 py-3 fs-5 font-montserrat fw-bold rounded-0 shadow-sm">
               Signer la présence du jour
             </button>
           </div>
@@ -98,11 +104,11 @@
   </main>
 
   <!-- Pied de page / Footer -->
-  <footer class="bg-brand-gray py-4 border-top">
+  <footer class="bg-brand-gray py-4 border-top border-top-brand-blue">
     <div class="container">
       <div class="row align-items-center gy-3 text-center text-md-start font-montserrat small">
         <div class="col-md-3">
-          <span class="fw-bold fs-4 text-brand-navy">Logo</span>
+          <img src="img/logo.png" alt="Expernet Campus" height="38">
         </div>
         <div class="col-md-3">
           <a href="#" class="text-dark text-decoration-none">Mentions légales</a>
