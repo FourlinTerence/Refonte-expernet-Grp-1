@@ -50,7 +50,7 @@ class ConnexionBDD {
         try {
             // Construction du DSN (Data Source Name)
             $dsn = "mysql:host=$this->hote;dbname=$this->nomBaseDeDonnees;charset=utf8mb4";
-
+            
             // Création de l'instance PDO
             $this->connexionPDO = new PDO($dsn, $this->nomUtilisateur, $this->motDePasse);
 
@@ -546,19 +546,10 @@ class ConnexionBDD {
 // Paramètres adaptés à votre environnement XAMPP local.
 // =============================================================================
 
-// Nom de votre base de données créée dans phpMyAdmin
-$nomBDD = "expernet_campus";
+// Inclusion de la configuration de connexion à la base de données
+require_once __DIR__.'/config.php';
 
-// Mot de passe MySQL (vide par défaut dans XAMPP)
-$motDePasse = "";
-
-// Utilisateur MySQL par défaut dans XAMPP
-$utilisateur = "root";
-
-// Hôte du serveur MySQL
-$hote = "localhost";
-
-// Création de l'instance de connexion (disponible pour tous les fichiers qui incluent ce fichier)
-$bdd = new ConnexionBDD($nomBDD, $motDePasse, $utilisateur, $hote);
+// Création de l'instance de connexion en utilisant les constantes définies dans config.php
+$bdd = new ConnexionBDD(DB_NAME, DB_PASS, DB_USER, DB_HOST);
 
 ?>

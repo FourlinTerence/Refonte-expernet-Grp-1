@@ -167,3 +167,42 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 3px solid #0057A4;
   background-color: #F4F6F8;
 }
+/* --------------------------------------------------------------------------
+   8. AMÉLIORATIONS STYLES SUPPLÉMENTAIRES
+   -------------------------------------------------------------------------- */
+
+/* Formulaires : espacement et focus */
+.form-control:focus {
+    border-color: #0057A4;
+    box-shadow: 0 0 0 0.25rem rgba(0,87,164,.25);
+}
+
+/* Boutons : légère ombre au survol */
+.btn-brand-primary,
+.btn-brand-orange {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+.btn-brand-primary:hover,
+.btn-brand-orange:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+/* Cartes : effet de hausse au survol */
+.card:hover {
+    transform: translateY(-4px);
+    transition: transform .2s ease;
+}
+
+/* Navbar : ajustement du logo */nav .navbar-brand img {
+    max-height: 46px;
+}
+
+/* Footer : texte plus petit et centré sur mobile */
+footer .container {
+    font-size: 0.875rem;
+}
+@media (max-width: 576px) {
+    footer .row > div {
+        margin-bottom: 0.5rem;
+    }
+}

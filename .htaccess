@@ -1,0 +1,4 @@
+RewriteEngine On
+# Rediriger toutes les requêtes .html vers le même fichier .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.html$ $1.php [L]
